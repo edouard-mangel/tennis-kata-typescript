@@ -1,7 +1,12 @@
 import { expect, test } from 'vitest'
 
 class Game {
-    private constructor(private player1Score: number, private player2Score: number) {
+    SCORE_INCREMENT = 15;
+
+    private constructor(
+        private player1Score: number,
+        private player2Score: number
+    ) {
     }
 
     public static NewGame(): Game {
@@ -9,19 +14,7 @@ class Game {
     }
 
     scoreToDisplay(): string {
-        if (this.player1Score > 0 && this.player2Score > 0) {
-            return '15-15';
-        }
-        if (this.player1Score > 1) {
-            return '30-0';
-        }
-        if (this.player1Score > 0) {
-            return '15-0';
-        }
-        if (this.player2Score > 0) {
-            return '0-15';
-        }
-        return '0-0';
+        return `${this.SCORE_INCREMENT * this.player1Score}-${this.SCORE_INCREMENT * this.player2Score}`;
     }
 
     player1Scored(): Game {
