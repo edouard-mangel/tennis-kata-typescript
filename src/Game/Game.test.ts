@@ -23,4 +23,7 @@ test('a game with both players who scored once should display 15 - 15', () => {
 test('a game with player 1 who scored twice should display 30 - 0', () => {
     expect(GameBuilder.OnGoingGame(2, 0).scoreToDisplay()).toBe('30-0');
 });
+test('a game with player 1 who scored three time should display 40 - 0', () => {
+    expect(GameBuilder.OnGoingGame(3, 0).scoreToDisplay()).toBe('40-0');
+});
 
