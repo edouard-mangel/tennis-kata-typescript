@@ -28,7 +28,7 @@
 
 - [] Création d'une classe Game qui représente un jeu, 
     - [x] Afficher le 0 - 0 
-    - [] Afficher le 15, 30, 40 
+    - [x] Afficher le 15, 30, 40 
     - [] Gérer le Deuce, 
         - [] Avantage 
         - [] Victoire 

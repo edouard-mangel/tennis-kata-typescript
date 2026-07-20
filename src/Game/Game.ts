@@ -12,9 +12,18 @@ export class Game {
     }
 
     scoreToDisplay(): string {
+        if (this.player1Score === 3 && this.player2Score === 3) {
+            return `40-40`;
+        }
+
         if (this.player1Score === 3) {
             return `40-${this.SCORE_INCREMENT * this.player2Score}`;
         }
+
+        if (this.player2Score === 3) {
+            return `${this.SCORE_INCREMENT * this.player1Score}-40`;
+        }
+
         return `${this.SCORE_INCREMENT * this.player1Score}-${this.SCORE_INCREMENT * this.player2Score}`;
     }
 
