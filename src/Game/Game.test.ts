@@ -51,3 +51,6 @@ test('a deuce game with player1 advantage who scored again should win', () => {
     // Then
     expect(game.scoreToDisplay()).toBe('winner: player1');
 });
+test('a game with player2 who scored 4 times and player1 scored once should win', () => {
+    expect(GameBuilder.OnGoingGame(1, 4).scoreToDisplay()).toBe('winner: player2');
+});
