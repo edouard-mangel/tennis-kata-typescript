@@ -1,5 +1,11 @@
 export class Game {
-    SCORE_INCREMENT = 15;
+    POINTS_MATRIX = {
+        0: '0',
+        1: '15',
+        2: '30',
+        3: '40',
+        4: 'A',
+    };
 
     protected constructor(
         private player1Score: number,
@@ -12,19 +18,7 @@ export class Game {
     }
 
     scoreToDisplay(): string {
-        if (this.player1Score === 3 && this.player2Score === 3) {
-            return `40-40`;
-        }
-
-        if (this.player1Score === 3) {
-            return `40-${this.SCORE_INCREMENT * this.player2Score}`;
-        }
-
-        if (this.player2Score === 3) {
-            return `${this.SCORE_INCREMENT * this.player1Score}-40`;
-        }
-
-        return `${this.SCORE_INCREMENT * this.player1Score}-${this.SCORE_INCREMENT * this.player2Score}`;
+        return `${this.POINTS_MATRIX[this.player1Score]}-${this.POINTS_MATRIX[this.player2Score]}`
     }
 
     player1Scored(): Game {

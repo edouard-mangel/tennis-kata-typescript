@@ -30,7 +30,7 @@
     - [x] Afficher le 0 - 0 
     - [x] Afficher le 15, 30, 40 
     - [] Gérer le Deuce, 
-        - [] Avantage 
+        - [x] Avantage 
         - [] Victoire 
     - [] Afficher la victoire d'un joueur 
 - [] Création d'une classe Set qui représente un Set   
