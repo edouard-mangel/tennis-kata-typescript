@@ -29,10 +29,10 @@
 - [] Création d'une classe Game qui représente un jeu, 
     - [x] Afficher le 0 - 0 
     - [x] Afficher le 15, 30, 40 
-    - [] Gérer le Deuce, 
+    - [x] Gérer le Deuce, 
         - [x] Avantage 
-        - [] Victoire 
-    - [] Afficher la victoire d'un joueur 
+        - [x] Victoire 
+    - [x] Afficher la victoire d'un joueur 
 - [] Création d'une classe Set qui représente un Set   
     - [] Afficher les jeux par Set ? 
 - [] Créer une classe Match, qui permet de gagner en 2 ou 3 sets. 

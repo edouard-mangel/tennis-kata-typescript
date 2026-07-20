@@ -41,7 +41,13 @@ test('a deuce game with player1 advantage should display A - 40', () => {
     // Then
     expect(game.scoreToDisplay()).toBe('A-40');
 });
-
-test('', () => {
-
+test('a deuce game with player1 advantage who scored again should win', () => {
+    // Given
+    // A deuce game where player1 is in advantage position
+    const game = GameBuilder.DeuceGame();
+    game.player1Scored();
+    // When
+    game.player1Scored();
+    // Then
+    expect(game.scoreToDisplay()).toBe('winner: player1');
 });
