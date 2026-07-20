@@ -29,7 +29,9 @@ test('a game with player 1 who scored three time should display 40 - 0', () => {
 test('a game with both players scoring three times should display 40 - 40', () => {
     expect(GameBuilder.OnGoingGame(3, 3).scoreToDisplay()).toBe('40-40');
 });
-
+test('a deuce game should display 40 - 40', () => {
+    expect(GameBuilder.DeuceGame().scoreToDisplay()).toBe('40-40');
+})
 test('a deuce game with player1 advantage should display A - 40', () => {
     // Given
     // A deuce game where player1 is in advantage position
@@ -38,4 +40,8 @@ test('a deuce game with player1 advantage should display A - 40', () => {
     game.player1Scored();
     // Then
     expect(game.scoreToDisplay()).toBe('A-40');
+});
+
+test('', () => {
+
 });
