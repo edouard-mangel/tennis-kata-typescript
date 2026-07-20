@@ -33,6 +33,6 @@
         - [x] Avantage 
         - [x] Victoire 
     - [x] Afficher la victoire d'un joueur 
-- [] Création d'une classe Set qui représente un Set   
+- [x] Création d'une classe Set qui représente un Set   
     - [] Afficher les jeux par Set ? 
 - [] Créer une classe Match, qui permet de gagner en 2 ou 3 sets. 

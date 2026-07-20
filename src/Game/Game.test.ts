@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 import { Game } from './Game';
-import { GameBuilder, TestGame } from './TestGame';
+import { GameBuilder } from './TestGame';
 
 test('a new game shoud have a nil score to display', () => {
     expect(Game.NewGame().scoreToDisplay()).toBe('0-0');
