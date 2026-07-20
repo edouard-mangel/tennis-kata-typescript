@@ -1,5 +1,5 @@
 export class Game {
-    POINTS_MATRIX = {
+    POINTS_MATRIX: Record<number, string> = {
         0: '0',
         1: '15',
         2: '30',
@@ -49,7 +49,7 @@ export class Game {
         return new Game(++this.player1Score, this.player2Score);
     }
 
-    player2Scored() {
+    player2Scored(): Game {
         return new Game(this.player1Score, ++this.player2Score);
     }
 }
