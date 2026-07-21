@@ -16,9 +16,9 @@ export class OnGoingGame {
     return new OnGoingGame(0,0);
   }
 
-  public setPointToPlayer(playerIndex: number): OnGoingGame | DeuceGame {
-    const newPlayer1Score = playerIndex === 0 ?  this.player1Score+ 1 : this.player1Score;
-    const newPlayer2Score = playerIndex === 1 ?  this.player2Score+ 1 : this.player2Score;
+  public setPointToPlayer(player: number): OnGoingGame | DeuceGame {
+    const newPlayer1Score = player === 1 ?  this.player1Score+ 1 : this.player1Score;
+    const newPlayer2Score = player === 2 ?  this.player2Score+ 1 : this.player2Score;
 
     // equality 40-40
     if (newPlayer1Score === newPlayer2Score && newPlayer1Score === 3) {
@@ -30,6 +30,4 @@ export class OnGoingGame {
   public getScore(): string {
     return `${this.scoreToText[this.player1Score]}-${this.scoreToText[this.player2Score]}`;
   }
-
-  
 }

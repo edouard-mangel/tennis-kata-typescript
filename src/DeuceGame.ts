@@ -1,3 +1,4 @@
+import { AdvantageGame } from "./AdvantageGame";
 import { Game } from "./Game";
 
 export class DeuceGame {
@@ -5,7 +6,8 @@ export class DeuceGame {
     return `40A`;
   }
 
-  public setPointToPlayer(): Game {
-    return this;
+  public setPointToPlayer(player: number): Game {
+
+    return new AdvantageGame(player);
   }
 }
