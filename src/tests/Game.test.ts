@@ -7,39 +7,37 @@ describe('Game', () => {
   });
 
   it('should display 0-15 score', () => {
-    const game = OnGoingGame.newGame();
-    game.setPointToPlayer(1);
+    const game = OnGoingGame.newGame().setPointToPlayer(1);
     expect(game.getScore()).toBe('0-15');
   });
 
   it('should display 15-0 score', () => {
-    const game = OnGoingGame.newGame();
-    game.setPointToPlayer(0);
+    const game = OnGoingGame.newGame().setPointToPlayer(0);
     expect(game.getScore()).toBe('15-0');
   });
 
   it('should display 15-15 score', () => {
-    const game = OnGoingGame.newGame();
-    game.setPointToPlayer(1);
-    game.setPointToPlayer(0);
+    const game = OnGoingGame.newGame()
+    .setPointToPlayer(1)
+    .setPointToPlayer(0);
     expect(game.getScore()).toBe('15-15');
   });
 
   it('should display 0-30 score', () => {
-    const game = OnGoingGame.newGame();
-    game.setPointToPlayer(1);
-    game.setPointToPlayer(1);
+    const game = OnGoingGame.newGame()
+    .setPointToPlayer(1)
+    .setPointToPlayer(1);
     expect(game.getScore()).toBe('0-30');
   });
 
   it('should display 40-40 score', () => {
-    const game = OnGoingGame.newGame();
-    game.setPointToPlayer(1);
-    game.setPointToPlayer(1);
-    game.setPointToPlayer(1);
-    game.setPointToPlayer(0);
-    game.setPointToPlayer(0);
-    game.setPointToPlayer(0);
+    const game = OnGoingGame.newGame()
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
+    .setPointToPlayer(0)
+    .setPointToPlayer(0)
+    .setPointToPlayer(0);
     expect(game.getScore()).toBe('40A');
   });
 

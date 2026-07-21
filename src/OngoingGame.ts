@@ -1,6 +1,6 @@
-import { Game } from "./Game";
+import { DeuceGame } from "./DeuceGame";
 
-export class OnGoingGame implements Game {
+export class OnGoingGame {
   scoreToText: Record<number, string> = {
     0: '0',
     1: '15',
@@ -13,29 +13,21 @@ export class OnGoingGame implements Game {
 
 
   public static newGame() {
-  
     return new OnGoingGame(0,0);
   }
 
-  public setPointToPlayer(playerIndex: number) {
+  public setPointToPlayer(playerIndex: number): OnGoingGame | DeuceGame {
+    const newPlayer1Score = playerIndex === 0 ?  this.player1Score+ 1 : this.player1Score;
+    const newPlayer2Score = playerIndex === 1 ?  this.player2Score+ 1 : this.player2Score;
+
     // equality 40-40
-    if (this.player1Score === this.player2Score && this.player1Score === 3) {
-      return;
+    if (newPlayer1Score === newPlayer2Score && newPlayer1Score === 3) {
+      return new DeuceGame();
     }
-    if(playerIndex === 0) {
-      this.player1Score++;
-    } else {
-      this.player2Score++;
-    }
+    return new OnGoingGame(newPlayer1Score, newPlayer2Score);
   }
 
   public getScore(): string {
-    if (
-      this.player1Score === this.player2Score &&
-      this.player1Score === 3
-    ) {
-      return `${this.scoreToText[3]}A`;
-    }
     return `${this.scoreToText[this.player1Score]}-${this.scoreToText[this.player2Score]}`;
   }
 
