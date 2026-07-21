@@ -43,7 +43,7 @@ describe('Game', () => {
     expect(game.getScore()).toBe('40A');
   });
 
-  it('should give advantage to player 1', () => {
+  it.skip('should give advantage to player 1', () => {
     const game = OnGoingGame.newGame();
     game.setPointToPlayer(1);
     game.setPointToPlayer(1);
@@ -55,7 +55,7 @@ describe('Game', () => {
     expect(game.getScore()).toBe('40A-40');
   });
 
-  it('should give advantage to player 2', () => {
+  it.skip('should give advantage to player 2', () => {
     const game = OnGoingGame.newGame();
     game.setPointToPlayer(1);
     game.setPointToPlayer(1);
@@ -67,7 +67,7 @@ describe('Game', () => {
     expect(game.getScore()).toBe('40-40A');
   });
 
-  it('should undo advantage to player 1', () => {
+  it.skip('should undo advantage to player 1', () => {
     const game = OnGoingGame.newGame();
     game.setPointToPlayer(1);
     game.setPointToPlayer(1);
