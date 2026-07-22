@@ -1,8 +1,8 @@
-import { Game } from "./Game";
+import { Player } from "./Player.types";
 
 export class WonGame {
   
-  constructor(private playerWinner: number) {
+  constructor(private playerWinner: Player) {
 
   }
 
@@ -10,7 +10,7 @@ export class WonGame {
     return `player ${this.playerWinner} wins`;
   }
 
-  public setPointToPlayer(): Game {
-    throw new Error();
+  public setPointToPlayer(): WonGame {
+    throw new Error('impossible');
   }
 }

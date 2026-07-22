@@ -1,4 +1,4 @@
-import { OnGoingGame } from '../OngoingGame';
+import { OnGoingGame } from '../OnGoingGame';
 
 describe('Game', () => {
   it('should display the default score', () => {
@@ -34,9 +34,9 @@ describe('Game', () => {
     const game = OnGoingGame.newGame()
     .setPointToPlayer(2)
     .setPointToPlayer(2)
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
     .setPointToPlayer(2)
-    .setPointToPlayer(1)
-    .setPointToPlayer(1)
     .setPointToPlayer(1);
     expect(game.getScore()).toBe('40A');
   });
@@ -45,9 +45,9 @@ describe('Game', () => {
     const game = OnGoingGame.newGame()
     .setPointToPlayer(2)
     .setPointToPlayer(2)
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
     .setPointToPlayer(2)
-    .setPointToPlayer(1)
-    .setPointToPlayer(1)
     .setPointToPlayer(1)
     .setPointToPlayer(1);
     expect(game.getScore()).toBe('advantage player 1');
@@ -57,9 +57,9 @@ describe('Game', () => {
     const game = OnGoingGame.newGame()
     .setPointToPlayer(2)
     .setPointToPlayer(2)
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
     .setPointToPlayer(2)
-    .setPointToPlayer(1)
-    .setPointToPlayer(1)
     .setPointToPlayer(1)
     .setPointToPlayer(2);
     expect(game.getScore()).toBe('advantage player 2');
@@ -69,9 +69,9 @@ describe('Game', () => {
     let game = OnGoingGame.newGame()
     .setPointToPlayer(2)
     .setPointToPlayer(2)
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
     .setPointToPlayer(2)
-    .setPointToPlayer(1)
-    .setPointToPlayer(1)
     .setPointToPlayer(1)
     .setPointToPlayer(1);
     expect(game.getScore()).toBe('advantage player 1');
@@ -81,14 +81,43 @@ describe('Game', () => {
 
    it('should make player 2 win the game', () => {
     const game = OnGoingGame.newGame()
-    .setPointToPlayer(2)
-    .setPointToPlayer(2)
-    .setPointToPlayer(2)
+    .setPointToPlayer(2) // 0-15
+    .setPointToPlayer(2) // 0-30
+    .setPointToPlayer(1) // 15-30
+    .setPointToPlayer(1) // 30-30
+    .setPointToPlayer(2) // 30-40
+    .setPointToPlayer(1) // 40 - 40
+    .setPointToPlayer(2) // 40 - 40A
+    .setPointToPlayer(2); // winner
+    expect(game.getScore()).toBe('player 2 wins');
+  });
+
+  it('should win directly with 40-0', () => {
+    const game = OnGoingGame.newGame()
     .setPointToPlayer(1)
     .setPointToPlayer(1)
     .setPointToPlayer(1)
+    .setPointToPlayer(1);
+    expect(game.getScore()).toBe('player 1 wins');
+  })
+
+  it('should win directly with 30-40', () => {
+    const game = OnGoingGame.newGame()
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
+    .setPointToPlayer(2)
+    .setPointToPlayer(2)
     .setPointToPlayer(2)
     .setPointToPlayer(2);
     expect(game.getScore()).toBe('player 2 wins');
-  });
+  })
+
+  it('should display 40-15', () => {
+    const game = OnGoingGame.newGame()
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
+    .setPointToPlayer(1)
+    .setPointToPlayer(2);
+    expect(game.getScore()).toBe('40-15');
+  })
 })
